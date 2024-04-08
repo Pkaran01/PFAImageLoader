@@ -1,6 +1,5 @@
 package com.paf.unsplashsample.di
 
-import com.facebook.stetho.okhttp3.StethoInterceptor
 import com.paf.unsplashsample.api.ApiClient
 import com.paf.unsplashsample.repo.MainRepo
 import com.paf.unsplashsample.ui.MainViewModel
@@ -48,7 +47,6 @@ private fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
 private fun provideHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
     return OkHttpClient.Builder()
         .addNetworkInterceptor(loggingInterceptor)
-        .addNetworkInterceptor(StethoInterceptor())
         .build()
 }
 
